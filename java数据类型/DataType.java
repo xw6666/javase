@@ -45,7 +45,7 @@ public class DataType {
 	 * 3.java中 没有所谓的0是假，非0是真 真只有true，假只有false
 	 * @param args [description]
 	 */
-	public static void main8(String[] args) {
+	public static void main(String[] args) {
 		boolean a = true;
 		boolean b = false;
 		System.out.println(a);
@@ -96,12 +96,14 @@ public class DataType {
 	 * @return      [description]
 	 */
 	public static void main4(String[] args) {
-		float a = 1.56f;    //4个字节 - 如果后面不加f，默认还是double
+		float a = 1.56f;    //4个字节 - 如果后面不加f，默认还是double，编译器报错
 		//尝试把double赋值给float
-		// double b = 1.87;    - err，因为不会隐式转换
-		// a = b;
-		System.out.println("max = " + Float.MAX_VALUE);
-		System.out.println("min = " + Float.MIN_VALUE);
+		// double b = 1.87;    
+		// a = b;  //err，因为不会隐式转换
+		System.out.println("float max = " + Float.MAX_VALUE);
+		System.out.println("float min = " + Float.MIN_VALUE);
+		System.out.println("double max = " + Double.MAX_VALUE);
+		System.out.println("double min = " + Double.MIN_VALUE);
 	}
 
 	/**
@@ -136,7 +138,7 @@ public class DataType {
 	 * String[] args说明
 	 * @param args [description]
 	 */
-	public static void main(String[] args) {  //String[] args 是记录运行时输入的命令行内容的，称为运行时命令行参数
+	public static void main2(String[] args) {  //String[] args 是记录运行时输入的命令行内容的，称为运行时命令行参数
 		for(int i = 0;i < args.length;i++) {
 			System.out.println(args[i]);
 		}
@@ -167,5 +169,11 @@ public class DataType {
 		System.out.println(b + c);   //这是30
 		System.out.println("b + c = " + (b + c));   //这是字符串拼接 b + c = 30
 		System.out.println("b + c = " + b + c);   //字符串拼接 b + c = 1020
+	}
+
+	public static void main11(String[] args) {
+		int a = 10;
+		System.out.println("int类型的最大值为：" + Integer.MAX_VALUE);
+		System.out.println("int类型的最小值为：" + Integer.MIN_VALUE);
 	}
 }
