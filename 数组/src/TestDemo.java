@@ -15,10 +15,93 @@ public class TestDemo {
         arr[1] = temp;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
-        String ret = Arrays.toString(arr);
+    //两倍复制数组并打印
+    public static int[] twoPatse(int[] arr) {
+        int[] ret = new int[arr.length];
+        for (int i = 0; i < ret.length; i++) {
+            ret[i] = 2 * arr[i];
+        }
+        //Array是操作数组的工具类
+        System.out.println(Arrays.toString(ret));
+
+        return ret;
+    }
+
+    //实现Array下的toString
+    public static String myToString(int[] arr) {
+        String ret = "[";
+        for (int i = 0; i < arr.length; i++) {
+            ret += Integer.toString(arr[i]);
+            if (i < arr.length - 1) {
+//                ret += Integer.toString(arr[i]);
+                ret += ", ";
+            }
+        }
+
+        ret += "]";
+        return ret;
+    }
+
+    public static void test1() {
+        int[] array1 = {4, 51, 2, 4, 7, 8};
+//        Arrays.sort(array1);
+//        System.out.println(Arrays.toString(array1));
+
+        //交换两个数
+//        int[] arr = {5, 10};
+//        System.out.println("交换前：" + Arrays.toString(arr));  //将数组以字符串输出
+//        swap(arr);
+//        System.out.println("交换后：" + Arrays.toString(arr));
+
+        //打印数组自行实现
+        Arrays.sort(array1);
+        String ret = myToString(array1);
         System.out.println(ret);
+    }
+
+    public static void test2() {
+        //数组拷贝
+        int[] array = {1,2,3,4,5,6};
+        //1.通过Arrays.copeOf
+        int[] ret1 = Arrays.copyOf(array,array.length);
+        System.out.println(Arrays.toString(ret1));
+
+        //2.通过System.arraycope  底层由c/c++实现 - 很快
+        int[] ret2 = new int[array.length];
+        System.arraycopy(ret1,0,ret2,0,ret2.length);
+        System.out.println(Arrays.toString(ret2));
+        //3.通过clone
+        int[] ret3 = array.clone();   //产生array的副本 这个方法是object的方法 object是所有类的父类
+        array[1] = 1;
+        System.out.println(Arrays.toString(ret3));
+        //4.for循环
+        int[] ret4 = new int[array.length];
+        for(int i = 0;i < ret4.length;i++){
+            ret4[i] = array[i];
+        }
+        System.out.println(Arrays.toString(ret4));
+    }
+
+    public static void main(String[] args) {
+//        test1();
+        test2();
+    }
+
+    public static void main3(String[] args) {
+        int[] arr1 = {2, 4, 1, 6, 9, 3, 8, 7, 5};
+//        String ret = Arrays.toString(arr);
+//        System.out.println(ret);
+//        int a = 0;
+//        System.out.println(a);
+//
+//        int[] array = null;   //代表array引用的是个空对象
+//        System.out.println(array);
+        int[] arr2 = twoPatse(arr1);
+        //排序并打印数组
+//        Arrays.sort(arr2);
+//        System.out.println(Arrays.toString(arr2));
+//        System.out.println(myToString(arr2));
+
     }
 
     /**
