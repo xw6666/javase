@@ -61,14 +61,14 @@ public class TestDemo {
 
     public static void test2() {
         //数组拷贝
-        int[] array = {1,2,3,4,5,6};
+        int[] array = {1, 2, 3, 4, 5, 6};
         //1.通过Arrays.copeOf
-        int[] ret1 = Arrays.copyOf(array,array.length);
+        int[] ret1 = Arrays.copyOf(array, array.length);
         System.out.println(Arrays.toString(ret1));
 
-        //2.通过System.arraycope  底层由c/c++实现 - 很快
+        //2.通过System.arraycopy  底层由c/c++实现 - 很快
         int[] ret2 = new int[array.length];
-        System.arraycopy(ret1,0,ret2,0,ret2.length);
+        System.arraycopy(ret1, 0, ret2, 0, ret2.length);
         System.out.println(Arrays.toString(ret2));
         //3.通过clone
         int[] ret3 = array.clone();   //产生array的副本 这个方法是object的方法 object是所有类的父类
@@ -76,15 +76,114 @@ public class TestDemo {
         System.out.println(Arrays.toString(ret3));
         //4.for循环
         int[] ret4 = new int[array.length];
-        for(int i = 0;i < ret4.length;i++){
+        for (int i = 0; i < ret4.length; i++) {
             ret4[i] = array[i];
         }
         System.out.println(Arrays.toString(ret4));
     }
 
+    public static int findMax(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            max = (arr[i] > max ? arr[i] : max);
+        }
+
+        return max;
+    }
+
+    public static int findMin(int[] arr) {
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            min = (arr[i] < min ? arr[i] : min);
+        }
+        return min;
+    }
+
+    public static int binarySearch(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length;
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            if (nums[mid] > target) {
+                right = mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+
+    public static void test3() {
+        //找到数组最大值
+        int[] arr = {2, 4, 1, 6, 9, 3, 8, 7, 5};
+        int max = findMax(arr);
+        int min = findMin(arr);
+        System.out.println("min = " + min + " max = " + max);
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(binarySearch(arr, 4));
+        System.out.println(Arrays.binarySearch(arr, 4));
+    }
+
+    /**
+     * 判断数组是否为升序
+     * 是 返回true
+     * 不是 返回false
+     */
+    public static boolean isUp(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 升序冒泡排序
+     */
+    public static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            boolean flag = true;  //true表示已经排序好
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                //交换
+                if (arr[j] > arr[j + 1]) {
+                    //如果需要交换就还没有排序好
+                    flag = false;
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            if(flag == true) {
+                break;
+            }
+        }
+    }
+
+    /**
+     * Arrays常用方法
+     */
+    public static void test4() {
+        //fill - 填充
+        int[] arr1 = new int[10];
+        Arrays.fill(arr1, 3, 7, 6);   //把arr数组[3,7)填充为6
+        System.out.println(Arrays.toString(arr1));
+        Arrays.fill(arr1, 6);   //把arr所有空间填为6
+        arr1[1] = 3;
+        System.out.println(myToString(arr1));
+        System.out.println(isUp(arr1));
+        bubbleSort(arr1);
+
+    }
+
     public static void main(String[] args) {
 //        test1();
-        test2();
+//        test2();
+//        test3();
+        test4();
     }
 
     public static void main3(String[] args) {
