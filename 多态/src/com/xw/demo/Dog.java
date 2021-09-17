@@ -1,6 +1,6 @@
 package com.xw.demo;
 
-public class Dog extends Animal {
+public class Dog extends Animal {  //继承抽象类，必须要重写
     public Dog(String name) {
         //错误 - 需要先有父类才能对子类进行构建赋值
 //        this.name = name;
