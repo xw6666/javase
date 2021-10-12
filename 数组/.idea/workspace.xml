@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="225d2550-056c-4541-917c-1b064cec008d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../类与对象/out/production/类与对象/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../类与对象/out/production/类与对象/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../类与对象/out/production/类与对象/TestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../类与对象/out/production/类与对象/TestDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../类与对象/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../类与对象/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomeWork/out/production/HomeWork/TestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../HomeWork/out/production/HomeWork/TestDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomeWork/src/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HomeWork/src/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../接口/src/com/xw/www/TestPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/../接口/src/com/xw/www/TestPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
